@@ -97,7 +97,7 @@ public class ContactUsFormTesting {
 //		assertEquals(contactUsPage.getNameError().getText(), "Please enter valid characters.");
 //		Utils.takeSnapShot(driver, "test.png");
 //
-// 		Milorad comment
+// 		Resenje za brisanje
 //	}
 
 	@AfterMethod
