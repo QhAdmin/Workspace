@@ -1,0 +1,14 @@
+*.class
+
+# Package Files #
+*.jar
+*.ear
+.directory
+*~
+*.bak
+/source/target/
+/target
+/.project
+/.settings
+*.iml
+/.idea/
