@@ -117,7 +117,7 @@ public class Calculator extends javax.swing.JFrame {
         jLabelDegRadToggle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Bojanov Calculator");
+        setTitle("Calculator");
         setBounds(new java.awt.Rectangle(50, 50, 600, 400));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(500, 350));
