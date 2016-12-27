@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:annotation-config/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    
+    <context:component-scan base-package="com.github.khannedy.simplepos.service.impl"></context:component-scan>
+    <context:component-scan base-package="com.github.khannedy.simplepos.validator.impl"></context:component-scan>
+    
+    <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+    </bean>
+    
+    <bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <util:properties>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+            </util:properties>
+        </property>
+        <property name="annotatedClasses">
+            <util:list>
+                <value>com.github.khannedy.simplepos.entity.master.Jabatan</value>
+                <value>com.github.khannedy.simplepos.entity.master.Karyawan</value>
+                <value>com.github.khannedy.simplepos.entity.master.Kategori</value>
+                <value>com.github.khannedy.simplepos.entity.master.Pelanggan</value>
+                <value>com.github.khannedy.simplepos.entity.master.Pemasok</value>
+                <value>com.github.khannedy.simplepos.entity.master.Penjual</value>
+                <value>com.github.khannedy.simplepos.entity.master.Satuan</value>
+                <value>com.github.khannedy.simplepos.entity.master.Barang</value>
+                <value>com.github.khannedy.simplepos.entity.master.DetailBarang</value>
+                <value>com.github.khannedy.simplepos.entity.user.Grup</value>
+                <value>com.github.khannedy.simplepos.entity.user.HakAkses</value>
+                <value>com.github.khannedy.simplepos.entity.user.Pengguna</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.Penjualan</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.Pembelian</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.DetailPenjualan</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.DetailPembelian</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.Pemasukkan</value>
+                <value>com.github.khannedy.simplepos.entity.transaction.Pengeluaran</value>
+                <value>com.github.khannedy.simplepos.entity.Pengaturan</value>
+                <value>com.github.khannedy.simplepos.entity.report.Jurnal</value>
+            </util:list>
+        </property>
+    </bean>
+    
+    <bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="transactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+</beans>
