@@ -1,0 +1,206 @@
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- 
+         SLD Editor - The Open Source Java SLD Editor
+
+         Copyright (C) 2016, SCISYS UK Limited
+
+         This program is free software: you can redistribute it and/or modify
+         it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or
+         (at your option) any later version.
+    
+         This program is distributed in the hope that it will be useful,
+         but WITHOUT ANY WARRANTY; without even the implied warranty of
+         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+         GNU General Public License for more details.
+    
+         You should have received a copy of the GNU General Public License
+         along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     -->
+
+    <!-- @author Robert Ward (SCISYS) -->
+
+    <xs:simpleType name="FieldIdEnum" final="restriction">
+        <xs:annotation>
+            <xs:documentation>
+                Uniquely identifies a field on a panel
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNKNOWN" />
+            <xs:enumeration value="GEOMETRY" />
+            <xs:enumeration value="TITLE" />
+            <xs:enumeration value="SYMBOL_TYPE" />
+            <xs:enumeration value="SIZE" />
+            <xs:enumeration value="ANGLE" />
+            <xs:enumeration value="DISPLACEMENT_X" />
+            <xs:enumeration value="DISPLACEMENT_Y" />
+            <xs:enumeration value="ANCHOR_POINT_V" />
+            <xs:enumeration value="ANCHOR_POINT_H" />
+            <xs:enumeration value="GAP" />
+            <xs:enumeration value="INITIAL_GAP" />
+            <xs:enumeration value="OVERALL_OPACITY" />
+            <xs:enumeration value="FILTER" />
+            <xs:enumeration value="FILL_COLOUR" />
+            <xs:enumeration value="DEFAULT_STYLE" />
+            <xs:enumeration value="ELSE_FILTER" />
+            <xs:enumeration value="EXTERNAL_GRAPHIC" />
+            <xs:enumeration value="LABEL" />
+            <xs:enumeration value="DESCRIPTION" />
+            <xs:enumeration value="MINIMUM_SCALE" />
+            <xs:enumeration value="MAXIMUM_SCALE" />
+            <xs:enumeration value="UOM" />
+            <xs:enumeration value="NAME" />
+            <xs:enumeration value="POINT_FILL_OPACITY" />
+            <xs:enumeration value="POINT_STROKE_OPACITY" />
+            <xs:enumeration value="LINE_FILL_OPACITY" />
+            <xs:enumeration value="LINE_STROKE_OPACITY" />
+            <xs:enumeration value="POLYGON_FILL_OPACITY" />
+            <xs:enumeration value="POLYGON_STROKE_OPACITY" />
+            <xs:enumeration value="TEXT_OPACITY" />
+            
+            <xs:enumeration value="STROKE_STYLE" />
+            <xs:enumeration value="STROKE_FILL_COLOUR" />
+            <xs:enumeration value="STROKE_FILL_WIDTH" />
+            <xs:enumeration value="STROKE_WIDTH" />
+            <xs:enumeration value="STROKE_LINE_JOIN" />
+            <xs:enumeration value="STROKE_LINE_CAP" />
+            <xs:enumeration value="STROKE_DASH_ARRAY" />
+            <xs:enumeration value="STROKE_OFFSET" />
+            <xs:enumeration value="STROKE_STROKE_COLOUR" />
+
+            <xs:enumeration value="STROKE_SYMBOL_SIZE" />
+            <xs:enumeration value="STROKE_SYMBOL_ANGLE" />
+            <xs:enumeration value="STROKE_SYMBOL_DISPLACEMENT_X" />
+            <xs:enumeration value="STROKE_SYMBOL_DISPLACEMENT_Y" />
+            <xs:enumeration value="STROKE_SYMBOL_ANCHOR_POINT_V" />
+            <xs:enumeration value="STROKE_SYMBOL_ANCHOR_POINT_H" />
+            <xs:enumeration value="STROKE_SYMBOL_GAP" />
+            <xs:enumeration value="STROKE_SYMBOL_INITIAL_GAP" />
+
+            <xs:enumeration value="FONT_FAMILY" />
+            <xs:enumeration value="FONT_STYLE" />
+            <xs:enumeration value="FONT_WEIGHT" />
+            <xs:enumeration value="FONT_SIZE" />
+            <xs:enumeration value="FONT_PREVIEW" />
+            <xs:enumeration value="HALO_COLOUR" />
+            <xs:enumeration value="HALO_RADIUS" />
+
+            <xs:enumeration value="VO_TEXT_LABEL" />
+            <xs:enumeration value="LABEL_ALLOW_OVERRUNS" />
+            <xs:enumeration value="LABEL_AUTO_WRAP" />
+            <xs:enumeration value="LABEL_CONFLICT_RESOLUTION" />
+            <xs:enumeration value="LABEL_FOLLOW_LINE" />
+            <xs:enumeration value="LABEL_FORCE_LEFT_TO_RIGHT" />
+            <xs:enumeration value="LABEL_GOODNESS_OF_FIT" />
+            <xs:enumeration value="LABEL_GRAPHIC_MARGIN" />
+            <xs:enumeration value="LABEL_GRAPHIC_RESIZE" />
+            <xs:enumeration value="LABEL_GROUP" />
+            <xs:enumeration value="LABEL_LABEL_ALL_GROUP" />
+            <xs:enumeration value="LABEL_LABEL_REPEAT" />
+            <xs:enumeration value="LABEL_MAX_ANGLE_DELTA" />
+            <xs:enumeration value="LABEL_MAX_DISPLACEMENT" />
+            <xs:enumeration value="LABEL_MIN_GROUP_DISTANCE" />
+            <xs:enumeration value="LABEL_PARTIALS" />
+            <xs:enumeration value="LABEL_POLYGONALIGN" />
+            <xs:enumeration value="LABEL_SPACE_AROUND" />
+            <xs:enumeration value="LABEL_UNDERLINE" />
+
+            <xs:enumeration value="MAX_DISPLACEMENT" />
+            <xs:enumeration value="PERPENDICULAR_OFFSET" />
+            <xs:enumeration value="LABEL_PLACEMENT" />
+            <xs:enumeration value="ALIGN" />
+            <xs:enumeration value="REPEATED" />
+            <xs:enumeration value="GENERALISED_LINE" />
+            <xs:enumeration value="TRANSFORMATION" />
+            <xs:enumeration value="TTF_SYMBOL" />
+
+            <xs:enumeration value="RANDOM_FILL_ACTIVATE" />
+            <xs:enumeration value="RANDOM_FILL_TILE_SIZE" />
+            <xs:enumeration value="RANDOM_FILL_ROTATION" />
+            <xs:enumeration value="RANDOM_FILL_SYMBOL_COUNT" />
+            <xs:enumeration value="RANDOM_FILL_RANDOM_SEED" />
+
+            <xs:enumeration value="WINDBARBS" />
+            <xs:enumeration value="WINDBARB_WINDSPEED" />
+            <xs:enumeration value="WINDBARB_WINDSPEED_UNITS" />
+            <xs:enumeration value="WINDBARB_NORTHERN_HEMISPHERE" />
+
+            <xs:enumeration value="WKT" />
+
+            <xs:enumeration value="FUNCTION" />
+            <xs:enumeration value="RASTER_OPACITY" />
+            <xs:enumeration value="RASTER_CONTRAST_GAMMAVALUE" />
+            <xs:enumeration value="RASTER_OVERLAP_BEHAVIOUR" />
+
+            <xs:enumeration value="RASTER_SHADEDRELIEF_BRIGHTNESS" />
+            <xs:enumeration value="RASTER_SHADEDRELIEF_FACTOR" />
+
+            <xs:enumeration value="RASTER_COLOURMAP_TYPE" />
+            <xs:enumeration value="RASTER_COLOURMAP" />
+
+            <xs:enumeration value="RASTER_RGB_RED_NAME" />
+            <xs:enumeration value="RASTER_RGB_CHANNEL_RED_CONTRAST_GAMMA" />
+            <xs:enumeration value="RASTER_RGB_GREEN_NAME" />
+            <xs:enumeration value="RASTER_RGB_CHANNEL_GREEN_CONTRAST_GAMMA" />
+            <xs:enumeration value="RASTER_RGB_BLUE_NAME" />
+            <xs:enumeration value="RASTER_RGB_CHANNEL_BLUE_CONTRAST_GAMMA" />
+            <xs:enumeration value="RASTER_RGB_GREY_NAME" />
+            <xs:enumeration value="RASTER_RGB_CHANNEL_GREY_CONTRAST_GAMMA" />
+
+            <xs:enumeration value="RASTER_COLOURMAP_ENTRY_LABEL" />
+            <xs:enumeration value="RASTER_COLOURMAP_ENTRY_COLOUR" />
+            <xs:enumeration value="RASTER_COLOURMAP_ENTRY_OPACITY" />
+            <xs:enumeration value="RASTER_COLOURMAP_ENTRY_QUANTITY" />
+
+            <xs:enumeration value="VO_RASTER_RED_CONTRAST_METHOD_NORMALIZE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_ALGORITHM_RED" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MIN_VALUE_RED" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MAX_VALUE_RED" />
+
+            <xs:enumeration value="VO_RASTER_GREEN_CONTRAST_METHOD_NORMALIZE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_ALGORITHM_GREEN" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MIN_VALUE_GREEN" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MAX_VALUE_GREEN" />
+
+            <xs:enumeration value="VO_RASTER_BLUE_CONTRAST_METHOD_NORMALIZE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_ALGORITHM_BLUE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MIN_VALUE_BLUE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MAX_VALUE_BLUE" />
+
+            <xs:enumeration value="VO_RASTER_GREY_CONTRAST_METHOD_NORMALIZE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_ALGORITHM_GREY" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MIN_VALUE_GREY" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MAX_VALUE_GREY" />
+
+            <xs:enumeration value="VO_RASTER_OVERALL_CONTRAST_METHOD_NORMALIZE" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_ALGORITHM_OVERALL" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MIN_VALUE_OVERALL" />
+            <xs:enumeration value="VO_RASTER_NORMALIZE_MAX_VALUE_OVERALL" />
+
+            <xs:enumeration value="REMOTE_OWS_SERVICE" />
+            <xs:enumeration value="REMOTE_OWS_ONLINERESOURCE" />
+            <xs:enumeration value="INLINE_FEATURE" />
+            <xs:enumeration value="LAYER_FEATURE_CONSTRAINTS" />
+
+            <xs:enumeration value="COLOUR_RAMP_TYPE" />
+            <xs:enumeration value="COLOUR_RAMP_COLOUR" />
+            <xs:enumeration value="COLOUR_RAMP_REVERSE" />
+
+            <xs:enumeration value="VO_POINT_RANDOMFILL" />
+            <xs:enumeration value="VO_POLYGON_RANDOMFILL" />
+            
+            <xs:enumeration value="VO_SHAPE" />
+            <xs:enumeration value="VO_EXTSHAPE" />
+            <xs:enumeration value="VO_ARROW" />
+            <xs:enumeration value="VO_ARROW_THICKNESS" />
+            <xs:enumeration value="VO_ARROW_HEIGHT_OVER_WIDTH" />
+            <xs:enumeration value="VO_ARROW_HEAD" />
+            <xs:enumeration value="VO_QGIS" />
+
+            <xs:enumeration value="VO_TEXT_LABEL_UNDERLINE" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
